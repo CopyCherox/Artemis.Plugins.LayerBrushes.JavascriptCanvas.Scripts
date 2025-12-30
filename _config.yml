@@ -1,0 +1,22 @@
+title: "Artemis JavaScript Canvas Scripts"
+description: "Downloadable JavaScript canvas effects for the Artemis plugin."
+baseurl: ""              # set to "/your-repo-name" for project pages
+url: "https://yourname.github.io"
+
+theme: minima            # or any supported GitHub Pages theme
+
+collections:
+  scripts:
+    output: true
+    permalink: /scripts/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "scripts"
+    values:
+      layout: default
+
+# Where the downloadable files live (used in templates)
+scripts_dir: /scripts
+images_dir: /images
