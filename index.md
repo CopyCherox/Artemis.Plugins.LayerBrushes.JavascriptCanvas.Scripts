@@ -1,24 +1,34 @@
----
+﻿---
 layout: default
 title: "Script Gallery"
 ---
 
-<h2>Script Gallery</h2>
-<p>Click a card to download the script file for use with the Artemis JavaScript Canvas plugin.</p>
+<div class="hero">
+  <h1>🎨 JavaScript Canvas Scripts</h1>
+  <p>Download LED effects for the <a href="https://github.com/CopyCherox/Artemis.Plugins.LayerBrushes.JavascriptCanvas">Artemis JavaScript Canvas plugin</a></p>
+</div>
 
-<div class="script-grid">
-  {% assign sorted = site.scripts | sort: "order" %}
-  {% for script in sorted %}
-    <div class="script-card">
-      <a href="{{ site.scripts_dir }}/{{ script.file | escape }}" download>
-        <div class="script-thumb">
-          <img src="{{ site.images_dir }}/{{ script.image | escape }}"
-               alt="{{ script.title | escape }}">
-        </div>
-        <div class="script-name">
-          {{ script.title }}
-        </div>
-      </a>
-    </div>
+<div class="scripts-grid">
+  {% for script in site.data.scripts %}
+  <div class="script-card">
+    <a href="{{ script.file | prepend: site.baseurl }}/scripts/" class="script-link" download="{{ script.filename }}">
+      <div class="script-image">
+        <img src="{{ script.image | prepend: site.baseurl }}/images/" alt="{{ script.title }}" loading="lazy">
+        <div class="download-icon">📥</div>
+      </div>
+      <h3>{{ script.title }}</h3>
+      <p>{{ script.description }}</p>
+    </a>
+  </div>
   {% endfor %}
+</div>
+
+<div class="install-guide">
+  <h2>How to Install</h2>
+  <ol>
+    <li>Download a script by clicking any card above</li>
+    <li>Open Artemis → Add JavaScript Canvas layer brush</li>
+    <li>Click "Import..." → Select the .json file</li>
+    <li>Select the script and click "Apply Changes to Layer Brush"</li>
+  </ol>
 </div>

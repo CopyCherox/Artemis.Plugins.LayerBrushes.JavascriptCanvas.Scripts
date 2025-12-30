@@ -1,0 +1,23 @@
+- title: "Moving Rainbow Wave"
+  description: "Smooth horizontal rainbow animation"
+  image: "moving-rainbow.png"
+  file: "moving-rainbow.json"
+  filename: "moving-rainbow.json"
+
+- title: "Breathing Pulse"
+  description: "Pulsing color breathing effect"
+  image: "breathing-pulse.png"
+  file: "breathing-pulse.json"
+  filename: "breathing-pulse.json"
+
+- title: "Fire Effect"
+  description: "Realistic per-pixel fire simulation"
+  image: "fire-effect.png"
+  file: "fire-effect.json"
+  filename: "fire-effect.json"
+
+- title: "Scan Line"
+  description: "Moving cyan scan line effect"
+  image: "scan-line.png"
+  file: "scan-line.json"
+  filename: "scan-line.json"

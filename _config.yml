@@ -1,22 +1,19 @@
 title: "Artemis JavaScript Canvas Scripts"
-description: "Downloadable JavaScript canvas effects for the Artemis plugin."
-baseurl: ""              # set to "/your-repo-name" for project pages
-url: "https://yourname.github.io"
+description: "Downloadable LED effects for Artemis RGB JavaScript Canvas plugin"
+baseurl: "/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts"
+url: "https://copycherox.github.io"
 
-theme: minima            # or any supported GitHub Pages theme
+theme: minima
+plugins:
+  - jekyll-feed
 
 collections:
   scripts:
-    output: true
-    permalink: /scripts/:name/
+    output: false
 
 defaults:
   - scope:
       path: ""
-      type: "scripts"
+      type: "posts"
     values:
-      layout: default
-
-# Where the downloadable files live (used in templates)
-scripts_dir: /scripts
-images_dir: /images
+      layout: "default"
