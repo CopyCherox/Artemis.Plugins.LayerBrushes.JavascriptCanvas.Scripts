@@ -11,7 +11,7 @@ title: "Script Gallery"
 <div class="scripts-grid">
   {% for script in site.data.scripts %}
   <div class="script-card">
-    <a href="/_scripts/{{ script.file }}" class="script-link" download="{{ script.filename }}">
+    <a href="/scripts/{{ script.file }}" class="script-link" download="{{ script.filename }}">
       <div class="script-image">
         <img src="/images/{{ script.image }}" alt="{{ script.title }}" loading="lazy">
         <div class="download-icon">📥</div>
