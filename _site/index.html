@@ -1,8 +1,3 @@
-﻿---
-layout: null
-title: "Script Gallery"
----
-
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { 
@@ -112,19 +107,151 @@ body {
   </div>
 
   <div class="scripts-grid">
-    {% for script in site.data.scripts %}
-    <div class="script-card loading" data-script="{{ site.baseurl }}/scripts/{{ script.file }}">
-      <a href="{{ site.baseurl }}/scripts/{{ script.file }}" class="script-link" download="{{ script.filename }}">
+    
+    <div class="script-card loading" data-script="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/fire-effect.json">
+      <a href="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/fire-effect.json" class="script-link" download="fire-effect.json">
         <div class="script-image">
-          <img alt="{{ script.title }}">
+          <img alt="Fire" />
           <canvas></canvas>
           <div class="download-icon">📥</div>
         </div>
-        <h3>{{ script.title }}</h3>
-        <p>{{ script.description }}</p>
+        <h3>Fire</h3>
+        <p>Realistic per-pixel fire simulation</p>
       </a>
     </div>
-    {% endfor %}
+    
+    <div class="script-card loading" data-script="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/checkerboard-pulse.json">
+      <a href="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/checkerboard-pulse.json" class="script-link" download="checkerboard-pulse.json">
+        <div class="script-image">
+          <img alt="Checkerboard pulse" />
+          <canvas></canvas>
+          <div class="download-icon">📥</div>
+        </div>
+        <h3>Checkerboard pulse</h3>
+        <p>Moving checherboard effect</p>
+      </a>
+    </div>
+    
+    <div class="script-card loading" data-script="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/retro-scanlines.json">
+      <a href="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/retro-scanlines.json" class="script-link" download="retro-scanlines.json">
+        <div class="script-image">
+          <img alt="Retro Scanlines" />
+          <canvas></canvas>
+          <div class="download-icon">📥</div>
+        </div>
+        <h3>Retro Scanlines</h3>
+        <p>Moving cyan scan line effect</p>
+      </a>
+    </div>
+    
+    <div class="script-card loading" data-script="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/plasma-wave-field.json">
+      <a href="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/plasma-wave-field.json" class="script-link" download="plasma-wave-field.json">
+        <div class="script-image">
+          <img alt="Plasma Wave Field" />
+          <canvas></canvas>
+          <div class="download-icon">📥</div>
+        </div>
+        <h3>Plasma Wave Field</h3>
+        <p>Moving cyan scan line effect</p>
+      </a>
+    </div>
+    
+    <div class="script-card loading" data-script="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/pulsing-circle-grid.json">
+      <a href="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/pulsing-circle-grid.json" class="script-link" download="pulsing-circle-grid.json">
+        <div class="script-image">
+          <img alt="Pulsing Circle Grid" />
+          <canvas></canvas>
+          <div class="download-icon">📥</div>
+        </div>
+        <h3>Pulsing Circle Grid</h3>
+        <p>Grid of pulsing animated circles</p>
+      </a>
+    </div>
+    
+    <div class="script-card loading" data-script="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/hexagonal-pulse-grid.json">
+      <a href="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/hexagonal-pulse-grid.json" class="script-link" download="hexagonal-pulse-grid.json">
+        <div class="script-image">
+          <img alt="Hexagonal Pulse Grid" />
+          <canvas></canvas>
+          <div class="download-icon">📥</div>
+        </div>
+        <h3>Hexagonal Pulse Grid</h3>
+        <p>Animated hexagonal pulse pattern</p>
+      </a>
+    </div>
+    
+    <div class="script-card loading" data-script="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/rotating-color-vortex.json">
+      <a href="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/rotating-color-vortex.json" class="script-link" download="rotating-color-vortex.json">
+        <div class="script-image">
+          <img alt="Rotating Color Vortex" />
+          <canvas></canvas>
+          <div class="download-icon">📥</div>
+        </div>
+        <h3>Rotating Color Vortex</h3>
+        <p>Spinning colorful vortex effect</p>
+      </a>
+    </div>
+    
+    <div class="script-card loading" data-script="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/rotating-kaleidoscope-circles.json">
+      <a href="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/rotating-kaleidoscope-circles.json" class="script-link" download="rotating-kaleidoscope-circles.json">
+        <div class="script-image">
+          <img alt="Rotating Kaleidoscope Circles" />
+          <canvas></canvas>
+          <div class="download-icon">📥</div>
+        </div>
+        <h3>Rotating Kaleidoscope Circles</h3>
+        <p>Symmetrical rotating circle patterns</p>
+      </a>
+    </div>
+    
+    <div class="script-card loading" data-script="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/rotating-triangle-mosaic.json">
+      <a href="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/rotating-triangle-mosaic.json" class="script-link" download="rotating-triangle-mosaic.json">
+        <div class="script-image">
+          <img alt="Rotating Triangle Mosaic" />
+          <canvas></canvas>
+          <div class="download-icon">📥</div>
+        </div>
+        <h3>Rotating Triangle Mosaic</h3>
+        <p>Spinning triangle tile pattern</p>
+      </a>
+    </div>
+    
+    <div class="script-card loading" data-script="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/smooth-gradient-flow.json">
+      <a href="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/smooth-gradient-flow.json" class="script-link" download="smooth-gradient-flow.json">
+        <div class="script-image">
+          <img alt="Smooth Gradient Flow" />
+          <canvas></canvas>
+          <div class="download-icon">📥</div>
+        </div>
+        <h3>Smooth Gradient Flow</h3>
+        <p>Flowing animated rainbow gradient</p>
+      </a>
+    </div>
+    
+    <div class="script-card loading" data-script="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/spiral-vortex-particles.json">
+      <a href="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/spiral-vortex-particles.json" class="script-link" download="spiral-vortex-particles.json">
+        <div class="script-image">
+          <img alt="Spiral Vortex Particles" />
+          <canvas></canvas>
+          <div class="download-icon">📥</div>
+        </div>
+        <h3>Spiral Vortex Particles</h3>
+        <p>Swirling particle spiral vortex</p>
+      </a>
+    </div>
+    
+    <div class="script-card loading" data-script="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/waving-diamond-grid.json">
+      <a href="/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts/scripts/waving-diamond-grid.json" class="script-link" download="waving-diamond-grid.json">
+        <div class="script-image">
+          <img alt="Waving Diamond Grid" />
+          <canvas></canvas>
+          <div class="download-icon">📥</div>
+        </div>
+        <h3>Waving Diamond Grid</h3>
+        <p>Undulating diamond tile wave</p>
+      </a>
+    </div>
+    
   </div>
 
   <div class="install-guide">
@@ -392,3 +519,4 @@ document.querySelectorAll('.script-card').forEach((card, index) => {
   });
 });
 </script>
+
