@@ -19,8 +19,7 @@ const SCRIPTS = [
     'Sinusoidal Grid Waves.json',
     'Smooth Gradient Flow.json',
     'Spiral Vortex Particles.json',
-    'Waving Diamond Grid.json',
-    'Woven Grid.json'
+    'Waving Diamond Grid.json'
 ];
 
 const baseUrl = window.location.hostname === 'localhost' ? '' : '/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts';
@@ -44,6 +43,18 @@ class CanvasContext {
         this._fillColor = { r, g, b, a };
         this._gradient = null;
         this.ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a / 255})`;
+    }
+
+    strokeStyle(r, g, b, a = 255) {
+        this.ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${a / 255})`;
+    }
+
+    lineWidth(width) {
+        this.ctx.lineWidth = width;
+    }
+
+    stroke() {
+        this.ctx.stroke();
     }
 
     fillStyleGradient(gradient) {
