@@ -6,9 +6,6 @@ theme: minima
 plugins:
   - jekyll-feed
 
-# Exclude index.html from theme processing
-exclude:
-  - index.html
 
 collections:
   scripts:
