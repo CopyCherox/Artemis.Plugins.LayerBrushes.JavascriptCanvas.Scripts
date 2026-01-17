@@ -20,10 +20,7 @@ const SCRIPTS = [
     'Smooth Gradient Flow.json',
     'Spiral Vortex Particles.json',
     'Waving Diamond Grid.json',
-    'Woven Grid.json',
-    'Plasma Wave Field.json',
-    'Plasma Wave Field.json',
-    'Plasma Wave Field.json'
+    'Woven Grid.json'
 ];
 
 const baseUrl = window.location.hostname === 'localhost' ? '' : '/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts';
