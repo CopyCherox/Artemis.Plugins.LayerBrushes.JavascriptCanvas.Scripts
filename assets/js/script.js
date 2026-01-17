@@ -1,17 +1,29 @@
 ﻿// List all your script filenames here
 const SCRIPTS = [
-    'fire-effect.json',
-    'checkerboard-pulse.json',
-    'retro-scanlines.json',
-    'plasma-wave-field.json',
-    'pulsing-circle-grid.json',
-    'hexagonal-pulse-grid.json',
-    'rotating-color-vortex.json',
-    'rotating-kaleidoscope-circles.json',
-    'rotating-triangle-mosaic.json',
-    'smooth-gradient-flow.json',
-    'spiral-vortex-particles.json',
-    'waving-diamond-grid.json'
+    'Cellular Life.json',
+    'Checkerboard Morph.json',
+    'Checkerboard Pulse.json',
+    'Circular Rings.json',
+    'Electric Field.json',
+    'Fire Effect.json',
+    'Flowing Liquid Noise.json',
+    'Hexagonal Pulse Grid.json',
+    'Horizontal Color Bands.json',
+    'Moving Rainbow Wave.json',
+    'Pulsing Circle Grid.json',
+    'Radial Color Burst.json',
+    'Retro Scanlines.json',
+    'Rotating Color Vortex.json',
+    'Rotating Kaleidoscope Circles.json',
+    'Rotating Triangle Mosaic.json',
+    'Sinusoidal Grid Waves.json',
+    'Smooth Gradient Flow.json',
+    'Spiral Vortex Particles.json',
+    'Waving Diamond Grid.json',
+    'Woven Grid.json',
+    'Plasma Wave Field.json',
+    'Plasma Wave Field.json',
+    'Plasma Wave Field.json'
 ];
 
 const baseUrl = window.location.hostname === 'localhost' ? '' : '/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts';
