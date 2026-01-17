@@ -1,11 +1,14 @@
-title: "Artemis JavaScript Canvas Scripts"
-description: "Downloadable LED effects for Artemis RGB JavaScript Canvas plugin"
-baseurl: "/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts"
-url: "https://copycherox.github.io"
-
+title: Artemis JavaScript Canvas Scripts
+description: Downloadable LED effects for Artemis RGB JavaScript Canvas plugin
+baseurl: /Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts
+url: https://copycherox.github.io
 theme: minima
 plugins:
   - jekyll-feed
+
+# Exclude index.html from theme processing
+exclude:
+  - index.html
 
 collections:
   scripts:
