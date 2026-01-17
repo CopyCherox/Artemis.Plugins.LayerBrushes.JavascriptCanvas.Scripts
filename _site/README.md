@@ -1,1 +1,0 @@
-# Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts
