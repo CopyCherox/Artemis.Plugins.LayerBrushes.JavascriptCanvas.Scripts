@@ -34,11 +34,105 @@ class CanvasContext {
         this._gradient = null;
     }
 
+    // DRAWING SHAPES
     clear(r = 0, g = 0, b = 0) {
         this.ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
         this.ctx.fillRect(0, 0, this.width, this.height);
     }
 
+    fillRect(x, y, w, h) {
+        this.ctx.fillRect(x, y, w, h);
+    }
+
+    strokeRect(x, y, w, h) {
+        this.ctx.strokeRect(x, y, w, h);
+    }
+
+    clearRect(x, y, w, h) {
+        this.ctx.clearRect(x, y, w, h);
+    }
+
+    fillCircle(x, y, radius) {
+        this.ctx.beginPath();
+        this.ctx.arc(x, y, radius, 0, Math.PI * 2);
+        this.ctx.fill();
+    }
+
+    strokeCircle(x, y, radius) {
+        this.ctx.beginPath();
+        this.ctx.arc(x, y, radius, 0, Math.PI * 2);
+        this.ctx.stroke();
+    }
+
+    // PATHS
+    beginPath() {
+        this.ctx.beginPath();
+    }
+
+    closePath() {
+        this.ctx.closePath();
+    }
+
+    fill() {
+        this.ctx.fill();
+    }
+
+    stroke() {
+        this.ctx.stroke();
+    }
+
+    clip() {
+        this.ctx.clip();
+    }
+
+    moveTo(x, y) {
+        this.ctx.moveTo(x, y);
+    }
+
+    lineTo(x, y) {
+        this.ctx.lineTo(x, y);
+    }
+
+    drawLine(x1, y1, x2, y2) {
+        this.ctx.beginPath();
+        this.ctx.moveTo(x1, y1);
+        this.ctx.lineTo(x2, y2);
+        this.ctx.stroke();
+    }
+
+    arc(x, y, radius, startAngle, endAngle, counterclockwise = false) {
+        this.ctx.arc(x, y, radius, startAngle, endAngle, counterclockwise);
+    }
+
+    arcTo(x1, y1, x2, y2, radius) {
+        this.ctx.arcTo(x1, y1, x2, y2, radius);
+    }
+
+    rect(x, y, w, h) {
+        this.ctx.rect(x, y, w, h);
+    }
+
+    ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle, ccw = false) {
+        this.ctx.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle, ccw);
+    }
+
+    quadraticCurveTo(cpx, cpy, x, y) {
+        this.ctx.quadraticCurveTo(cpx, cpy, x, y);
+    }
+
+    bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y) {
+        this.ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y);
+    }
+
+    isPointInPath(x, y) {
+        return this.ctx.isPointInPath(x, y);
+    }
+
+    isPointInStroke(x, y) {
+        return this.ctx.isPointInStroke(x, y);
+    }
+
+    // STYLES
     fillStyle(r, g, b, a = 255) {
         this._fillColor = { r, g, b, a };
         this._gradient = null;
@@ -53,55 +147,68 @@ class CanvasContext {
         this.ctx.lineWidth = width;
     }
 
-    stroke() {
-        this.ctx.stroke();
+    lineCap(cap) {
+        this.ctx.lineCap = cap;
     }
 
+    lineJoin(join) {
+        this.ctx.lineJoin = join;
+    }
+
+    miterLimit(limit) {
+        this.ctx.miterLimit = limit;
+    }
+
+    globalAlpha(alpha) {
+        this.ctx.globalAlpha = alpha;
+    }
+
+    // SHADOWS
+    shadowBlur(blur) {
+        this.ctx.shadowBlur = blur;
+    }
+
+    shadowColor(r, g, b, a = 255) {
+        this.ctx.shadowColor = `rgba(${r}, ${g}, ${b}, ${a / 255})`;
+    }
+
+    shadowOffsetX(x) {
+        this.ctx.shadowOffsetX = x;
+    }
+
+    shadowOffsetY(y) {
+        this.ctx.shadowOffsetY = y;
+    }
+
+    // GRADIENTS
     fillStyleGradient(gradient) {
         this._gradient = gradient;
         this.ctx.fillStyle = gradient.canvasGradient;
     }
 
-    fillRect(x, y, w, h) {
-        this.ctx.fillRect(x, y, w, h);
+    strokeStyleGradient(gradient) {
+        this.ctx.strokeStyle = gradient.canvasGradient;
     }
 
-    fillCircle(x, y, radius) {
-        this.ctx.beginPath();
-        this.ctx.arc(x, y, radius, 0, Math.PI * 2);
-        this.ctx.fill();
+    createLinearGradient(x0, y0, x1, y1) {
+        return new CanvasGradient(this.ctx.createLinearGradient(x0, y0, x1, y1));
     }
 
-    beginPath() {
-        this.ctx.beginPath();
+    createRadialGradient(x0, y0, r0, x1, y1, r1) {
+        return new CanvasGradient(this.ctx.createRadialGradient(x0, y0, r0, x1, y1, r1));
     }
 
-    arc(x, y, radius, startAngle, endAngle) {
-        this.ctx.arc(x, y, radius, startAngle, endAngle);
-    }
-
-    fill() {
-        this.ctx.fill();
-    }
-
-    moveTo(x, y) {
-        this.ctx.moveTo(x, y);
-    }
-
-    lineTo(x, y) {
-        this.ctx.lineTo(x, y);
-    }
-
-    closePath() {
-        this.ctx.closePath();
-    }
-
+    // TRANSFORMATIONS
     save() {
         this.ctx.save();
     }
 
     restore() {
         this.ctx.restore();
+    }
+
+    resetTransform() {
+        this.ctx.resetTransform();
     }
 
     translate(x, y) {
@@ -116,14 +223,40 @@ class CanvasContext {
         this.ctx.scale(x, y);
     }
 
-    createLinearGradient(x0, y0, x1, y1) {
-        return new CanvasGradient(this.ctx.createLinearGradient(x0, y0, x1, y1));
+    transform(a, b, c, d, e, f) {
+        this.ctx.transform(a, b, c, d, e, f);
     }
 
-    createRadialGradient(x0, y0, r0, x1, y1, r1) {
-        return new CanvasGradient(this.ctx.createRadialGradient(x0, y0, r0, x1, y1, r1));
+    setTransform(a, b, c, d, e, f) {
+        this.ctx.setTransform(a, b, c, d, e, f);
     }
 
+    // TEXT
+    font(font) {
+        this.ctx.font = font;
+    }
+
+    textAlign(align) {
+        this.ctx.textAlign = align;
+    }
+
+    textBaseline(baseline) {
+        this.ctx.textBaseline = baseline;
+    }
+
+    fillText(text, x, y) {
+        this.ctx.fillText(text, x, y);
+    }
+
+    strokeText(text, x, y) {
+        this.ctx.strokeText(text, x, y);
+    }
+
+    measureText(text) {
+        return this.ctx.measureText(text);
+    }
+
+    // HELPERS
     hslToRgb(h, s, l) {
         let r, g, b;
         if (s === 0) {
@@ -146,6 +279,29 @@ class CanvasContext {
         return { r: Math.round(r * 255), g: Math.round(g * 255), b: Math.round(b * 255) };
     }
 
+    rgbToHsl(r, g, b) {
+        r /= 255;
+        g /= 255;
+        b /= 255;
+        const max = Math.max(r, g, b);
+        const min = Math.min(r, g, b);
+        let h, s, l = (max + min) / 2;
+
+        if (max === min) {
+            h = s = 0;
+        } else {
+            const d = max - min;
+            s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+            switch (max) {
+                case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                case g: h = (b - r) / d + 2; break;
+                case b: h = (r - g) / d + 4; break;
+            }
+            h /= 6;
+        }
+        return { h, s, l };
+    }
+
     get globalCompositeOperation() {
         return this.ctx.globalCompositeOperation;
     }
@@ -154,6 +310,7 @@ class CanvasContext {
         this.ctx.globalCompositeOperation = value;
     }
 }
+
 
 class CanvasGradient {
     constructor(canvasGradient) {
