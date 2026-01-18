@@ -35,6 +35,7 @@ bld/
 _site/
 Gemfile
 Gemfile.lock
+run.txt
 
 
 # Visual Studio 2015/2017 cache/options directory
