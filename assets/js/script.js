@@ -19,7 +19,12 @@ const SCRIPTS = [
     'Sinusoidal Grid Waves.json',
     'Smooth Gradient Flow.json',
     'Spiral Vortex Particles.json',
-    'Waving Diamond Grid.json'
+    'Waving Diamond Grid.json',
+    'Pulsing Grid (Audio Reactive).json',
+    'Diamond Grid Flow (Audio reactive).json',
+    'Grid Pulse (Audio Reative).json',
+    'Hexagon Grid Pulse (Audio reactive).json',
+    'Mosaic Tiles (Audio Reactive).json'
 ];
 
 const baseUrl = window.location.hostname === 'localhost' ? '' : '/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts';
@@ -376,6 +381,33 @@ class ScriptPlayer {
         const ctx = this.ctx;
         const time = 0.5;
 
+        // Mock audio data for thumbnail (completely static)
+        const audio = {
+            // Fixed constant values - no variation
+            bass: 0.15,
+            mid: 0.2,
+            treble: 0.15,
+            volume: 0.2,
+            beat: 0,
+            // Capitalized properties
+            Bass: 0.15,
+            Mid: 0.2,
+            Treble: 0.15,
+            Volume: 0.2,
+            Beat: 0,
+            // GetBand with very low constant values
+            GetBand: function (index) {
+                if (index < 0 || index > 31) return 0;
+                const center = 16;
+                const distance = Math.abs(index - center);
+                const value = Math.max(0, 200 - distance * 10);
+                return value * 0.05;  // Extremely small
+            }
+        };
+
+        // Mock timeControl
+        const timeControl = { speed: 1, paused: false, Speed: 1, Paused: false };
+
         try {
             eval(this.scriptCode);
         } catch (err) {
@@ -404,6 +436,38 @@ class ScriptPlayer {
         const width = this.canvas.width;
         const height = this.canvas.height;
         const ctx = this.ctx;
+
+        // Simulated audio data - STATIC for size, animated for color only
+        const audio = {
+            // COMPLETELY STATIC - no size variation at all!
+            bass: 0.15,      // Fixed value
+            mid: 0.2,        // Fixed value  
+            treble: 0.15 + Math.sin(time * 5.7) * 0.15,   // Varies for color only
+            volume: 0.2,     // Fixed value
+            beat: Math.abs(Math.sin(time * 6.28)) > 0.85 ? 1 : 0,
+            // GetBand returns consistent low values
+            GetBand: function (index) {
+                if (index < 0 || index > 31) return 0;
+                const freq = index / 31;
+                const wave = Math.sin(time * (2 + freq * 8) + index);
+                const baseValue = (wave + 1) * 127;
+                return Math.floor(baseValue * 0.2 * 0.05);  // Extremely gentle, consistent
+            }
+        };
+        audio.bass = Math.max(0, Math.min(1, audio.bass));
+        audio.mid = Math.max(0, Math.min(1, audio.mid));
+        audio.treble = Math.max(0, Math.min(1, audio.treble));
+        audio.volume = Math.max(0, Math.min(1, audio.volume));
+
+        // Capitalized versions
+        audio.Bass = audio.bass;
+        audio.Mid = audio.mid;
+        audio.Treble = audio.treble;
+        audio.Volume = audio.volume;
+        audio.Beat = audio.beat;
+
+        // Mock timeControl
+        const timeControl = { speed: 1, paused: false, Speed: 1, Paused: false };
 
         try {
             eval(this.scriptCode);
