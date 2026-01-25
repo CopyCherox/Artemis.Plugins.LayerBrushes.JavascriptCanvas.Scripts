@@ -4,12 +4,17 @@ const SCRIPTS = [
     'Checkerboard Morph.json',
     'Checkerboard Pulse.json',
     'Circular Rings.json',
+    'Conway\'s Neon Life',
     'Electric Field.json',
     'Fire Effect.json',
     'Flowing Liquid Noise.json',
     'Hexagonal Pulse Grid.json',
     'Horizontal Color Bands.json',
+    'Liquid Plasma.json',
     'Moving Rainbow Wave.json',
+    'Plasma Wave Effect.json',
+    'Plasma Wave Field.json',
+    'Plasma Wave.json',
     'Pulsing Circle Grid.json',
     'Radial Color Burst.json',
     'Retro Scanlines.json',
@@ -19,12 +24,18 @@ const SCRIPTS = [
     'Sinusoidal Grid Waves.json',
     'Smooth Gradient Flow.json',
     'Spiral Vortex Particles.json',
+    'Triangle Tessellation.json',
+    'Tunnel Effect.json',
     'Waving Diamond Grid.json',
     'Pulsing Grid (Audio Reactive).json',
     'Diamond Grid Flow (Audio reactive).json',
     'Grid Pulse (Audio Reative).json',
     'Hexagon Grid Pulse (Audio reactive).json',
-    'Mosaic Tiles (Audio Reactive).json'
+    'Hexagon Pulse (Audio Reactive).json',
+    'Hypnotic Tunnel Spiral (Audio Reactive).json',
+    'Mosaic Tiles (Audio Reactive).json',
+    'Pulsing Grid (Audio Reactive).json',
+    'Bio-Digital Cells (Audio Reactive)'
 ];
 
 const baseUrl = window.location.hostname === 'localhost' ? '' : '/Artemis.Plugins.LayerBrushes.JavascriptCanvas.Scripts';
