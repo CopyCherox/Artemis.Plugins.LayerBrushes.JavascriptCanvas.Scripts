@@ -25,7 +25,7 @@ const SCRIPTS = [
     'Triangle Tessellation.json',
     'Tunnel Effect.json',
     'Waving Diamond Grid.json',
-    'Conway\'s Neon Life.json',
+    'Diamond Grid (Audio Reactive).json',
     'Pulsing Grid (Audio Reactive).json',
     'Diamond Grid Flow (Audio reactive).json',
     'Grid Pulse (Audio Reative).json',
