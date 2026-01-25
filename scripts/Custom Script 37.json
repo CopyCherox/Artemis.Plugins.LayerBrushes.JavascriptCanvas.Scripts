@@ -1,4 +1,0 @@
-{
-  "ScriptName": "Custom Script 37",
-  "JavaScriptCode": "// New script\nctx.clear(0, 255, 0);"
-}
